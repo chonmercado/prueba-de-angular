@@ -3,11 +3,10 @@ name: Deploy to Github Pages
 on:
    push: 
        branches:
-            -main
+            -master
 jobs:
    deploy:
    runs-on: ubuntu_latest
-
 
    steps:
    - name: Checkout Repository
