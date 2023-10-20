@@ -1,24 +1,25 @@
-name: Biuld and Deploy 
+name: Build and Deploy
 on:
-    push: 
-       branches:
-            - master
-      workflow_dispatch:
-          
-      permissions:
-        contents: write
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+  
+permissions:
+  contents: write
 jobs:
-   biuld-and-deploy:
-   runs-on: ubuntu_latest
-     steps:
-   - name: Checkout Repository
-     uses: action/checkout@v3
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-   - name: Install and Build
-   run:|
-   npm ci
-   npm run build
-  name: Deploy
-  uses: JamesIves/github-pages-deploy-action@v4
-  with:
-  folder: dist/prueba-de-angular #aqui nombre de la app
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/prueba-de-angular # The folder the action should deploy.
