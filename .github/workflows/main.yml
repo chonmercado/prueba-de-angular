@@ -21,4 +21,4 @@ jobs:
   name: Deploy
   uses: JamesIves/github-pages-deploy-action@v4
   with:
-  folder: dist/mi-app #aqui nombre de la app
+  folder: dist/prueba-de-angular #aqui nombre de la app
